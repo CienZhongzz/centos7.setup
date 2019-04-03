@@ -1,30 +1,30 @@
 # nginx命令帮助文档
 <br/>
 
-### 安装
+### 1.安装
 > pass
 
 <br/>
 
-### 启动和查看
-#### 查看nginx进程
+### 2.启动和查看
+#### 2.1.查看nginx进程
 > ps -ef|grep nginx
 
-#### 检测nginx配置文件是否正确
+#### 2.2.检测nginx配置文件是否正确
 > /usr/local/webserver/nginx/sbin/nginx -t
 
-#### 启动nginx
+#### 2.3.启动nginx
 > /usr/local/webserver/nginx/sbin/nginx
 
-#### 重启nginx
+#### 2.4.重启nginx
 > /usr/local/webserver/nginx/sbin/nginx -s reload
 
 <br/>
 
-### 配置
-#### 配置新网站
+### 3.配置
+#### 3.1.配置新网站
 ​```
-server {
+    server {
     listen 80;
     server_name imgsite.cienhub.com;
     client_max_body_size 200m;
