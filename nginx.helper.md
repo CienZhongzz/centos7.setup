@@ -2,8 +2,10 @@
 <br/>
 
 ### 安装
+> pass
 
 <br/>
+
 ### 启动和查看
 #### 查看nginx进程
 > ps -ef|grep nginx
@@ -18,6 +20,7 @@
 > /usr/local/webserver/nginx/sbin/nginx -s reload
 
 <br/>
+
 ### 配置
 #### 配置新网站
 ​```
