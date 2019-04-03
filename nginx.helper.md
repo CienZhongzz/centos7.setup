@@ -23,7 +23,7 @@
 
 ### 3.配置
 #### 3.1.配置新网站
-​```    代码段
+​```server
 server {
     listen 80;
     server_name imgsite.cienhub.com;
