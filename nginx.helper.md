@@ -23,8 +23,8 @@
 
 ### 3.配置
 #### 3.1.配置新网站
-​```
-    server {
+​```    代码段
+server {
     listen 80;
     server_name imgsite.cienhub.com;
     client_max_body_size 200m;
