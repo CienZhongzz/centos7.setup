@@ -8,8 +8,8 @@
 <br/>
 
 ### 2.单独合并某个提交到develop
-> git checkout develop
-> git pull
+> git checkout develop  
+> git pull  
 > git cherry-pick a62a00edcab9b348df7c6e2b3386a11517e234da
 
 <br/>
