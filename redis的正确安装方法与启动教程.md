@@ -1,7 +1,8 @@
 # 在Linux上安装redis
 
 1. 下载最新稳定版本到默认目录，笔者这里下载的是5.0.5版本
-> 官网下载地址：http://redis.io/download
+> 官网下载地址：http://redis.io/download 
+
 <code><pre>
     wget http://download.redis.io/releases/redis-5.0.5.tar.gz
 </pre></code>
@@ -57,16 +58,16 @@
 11. 配置redis为后台启动
 <code><pre>
     vi /usr/local/redis/etc/redis.conf
-    # 编辑内容
+    // 编辑内容
     daemonize no
-    # 改为
+    // 改为
     daemonize yes
 </pre></code>
 
 12. 将redis加入到开机启动
 <code><pre>
     vi /etc/rc.local
-    # 内容后面增加：
+    // 内容后面增加：
     redis-server /usr/local/redis/etc/redis.conf
 </pre></code>
 
@@ -77,13 +78,14 @@
 
 14. 设置redis密码（不重启redis，当redis重启时密码依然有效）
 <code><pre>
-    # 密码会设置在配置文件redis.conf中requirepass test123
+    // 密码会设置在配置文件redis.conf中requirepass test123
     config set requirepass test123
-    # 后面启动客户端查询需要密码验证
+    // 后面启动客户端查询需要密码验证
     auth test123
 </pre></code>
 
 15. Redis可执行文件说明
+
 | 可执行文件 | 作用 |
 | :--- | :--- |
 | redis-server | 启动Redis |
@@ -95,10 +97,10 @@
 
 16. 其他常用命令
 <code><pre>
-#停止redis
-pkill redis  
- 
-#卸载redis：
-rm -rf /usr/local/redis //删除安装目录
-rm -rf /usr/bin/redis-* //删除所有redis相关命令脚本
+    //停止redis
+    pkill redis  
+    
+    //卸载redis：
+    rm -rf /usr/local/redis //删除安装目录
+    rm -rf /usr/bin/redis-* //删除所有redis相关命令脚本
 </pre></code>
