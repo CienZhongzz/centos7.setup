@@ -20,4 +20,9 @@
 </pre></code>
 <br/>
 
+- 5.删除挂载目录
+<code><pre>
+    umount /test1
+</pre></code>
+
 *当出现挂载的目录时，说明windows共享文件夹已挂载成功，在linux服务器上部署的项目就可以直接使用File来进行文件的读取操作了。*
