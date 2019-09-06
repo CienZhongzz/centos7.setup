@@ -104,13 +104,20 @@
     rm -rf /usr/bin/redis-* //删除所有redis相关命令脚本
 </pre></code>
 
-17. 运行redis局域网访问
-假设A B 两台机器<br>
-在B（ip:192.168.1.99）机器上修改redis配置文件<br>
+17. 允许redis局域网访问<br/>
+
+假设A B 两台机器<br/>
+
+在B（ip:192.168.1.99）机器上修改redis配置文件<br/>
+
 > bind 192.168.1.99
-关闭防火墙的情况下 局域网内的机器都能访问到该redis了。可以再设置一个密码。<br>
+
+关闭防火墙的情况下 局域网内的机器都能访问到该redis了。可以再设置一个密码。<br/>
+
 > requirepass  youpassword
-重启redis<br>
+
+重启redis<br/>
+
 <code>
 redis-server /usr/local/redis/etc/redis.conf
 </code>
