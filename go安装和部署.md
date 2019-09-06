@@ -42,3 +42,17 @@ go build
 ./cmd -conf ../configs
 </pre>
 </code>
+
+- 环境变量.bash_profile设置
+<code>
+<pre>
+vi ~/.bash_profile
+# 插入以下内容
+export GOPATH=/home/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOPATH/bin
+export GOPROXY=https://goproxy.io   # 代理，这是一条注释
+# 修改保存后，执行以下命令让环境变量生效
+source .bash_profile
+</pre>
+</code>
