@@ -1,10 +1,10 @@
 # nginx命令帮助文档
-<br/>
+
 
 ### 1.安装
+
 > pass
 
-<br/>
 
 ### 2.启动和查看
 #### 2.1.查看nginx进程
@@ -19,11 +19,13 @@
 #### 2.4.重启nginx
 > /usr/local/webserver/nginx/sbin/nginx -s reload
 
-<br/>
+
 
 ### 3.配置
+
 #### 3.1.配置新网站
-​```server
+
+​<code><pre>server
 server {
     listen 80;
     server_name imgsite.cienhub.com;
@@ -33,4 +35,4 @@ server {
         index index.html;
     }
 }
-​```
+​</pre></code>
