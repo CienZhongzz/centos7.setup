@@ -18,6 +18,8 @@
 - 命令
 
 <code><pre>
+    # 查看php版本
+    php -v
     # 启动
     systemctl start php-fpm
     # 重启
@@ -26,4 +28,10 @@
     systemctl status php-fpm
     # 停止命令
     pkill php-fpm
+    # 重启或启动命令
+    php-fpm -R
+    # 查看9000端口是否监听
+    netstat -lntup | grep 9000
+    # 杀掉所有的php-fpm进程
+    killall php-fpm
 </pre></code>
