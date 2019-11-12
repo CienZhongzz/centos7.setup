@@ -33,3 +33,41 @@ rpm -qa |grep mysql 查看有如下内容
 重新升级
 
 > rpm -Uvh mysql57-community-release-el7-10.noarch.rpm
+
+
+### 问题解决办法收集
+
+> 内存不足导致mysql经常自动停止服务
+
+**创建 SWAP 分区**
+
+- a.逐条运行下面的命令
+
+<code><pre>
+    sudo /bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=1024
+    sudo /sbin/mkswap /var/swap.1
+    sudo /sbin/swapon /var/swap.1
+</pre></code>
+
+- b.将下面一行添加到 /etc/fstab,服务器重启时自动启动swap
+
+<code><pre>
+    /var/swap.1 swap swap defaults 0 0
+</pre></code>
+
+- c.降低数据库 InnoDB 引擎的缓冲区大小，以及限制 MySQL 的最大连接数(max_connections)
+
+<code><pre>
+    在/etc/mysql/my.cnf 的 mysqld 下添加或修改下面两句：
+
+    降低 InnoDB 缓冲区大小为 64M 或者 32M
+    innodb_buffer_pool_size = 64M
+    
+    限制最大连接数为100，在服务器配置很低时可以继续降低
+    max_connections = 100
+</pre></code>
+
+- d.修改完重启 MySQL
+<code><pre>
+    service mysqld restart
+</pre></code>
