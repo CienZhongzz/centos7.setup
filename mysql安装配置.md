@@ -34,6 +34,7 @@ rpm -qa |grep mysql 查看有如下内容
 
 > rpm -Uvh mysql57-community-release-el7-10.noarch.rpm
 
+<br><br>
 
 ### 问题解决办法收集
 
@@ -56,7 +57,6 @@ rpm -qa |grep mysql 查看有如下内容
 </pre></code>
 
 - c.降低数据库 InnoDB 引擎的缓冲区大小，以及限制 MySQL 的最大连接数(max_connections)
-
 <code><pre>
     在/etc/mysql/my.cnf 的 mysqld 下添加或修改下面两句：
 
