@@ -3,7 +3,7 @@
 
 ### 1.安装
 
-> pass
+> http://www.nginx.cn/install
 
 
 ### 2.启动和查看
