@@ -40,8 +40,7 @@ rpm -qa |grep mysql 查看有如下内容
 > rpm -Uvh mysql57-community-release-el7-10.noarch.rpm
 
 
-
-- 下一步，继续安装
+下一步，继续安装
 <code><pre>
     yum update
 
