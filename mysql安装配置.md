@@ -42,9 +42,9 @@ rpm -qa |grep mysql 查看有如下内容
 
 下一步，继续安装
 <code><pre>
-    yum update
+yum update
 
-    yum install mysql-server
+yum install mysql-server
 </pre></code>
 
 设置权限
