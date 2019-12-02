@@ -39,6 +39,35 @@ rpm -qa |grep mysql 查看有如下内容
 
 > rpm -Uvh mysql57-community-release-el7-10.noarch.rpm
 
+
+
+- 下一步，继续安装
+<code><pre>
+    yum update
+
+    yum install mysql-server
+</pre></code>
+
+设置权限
+<code><pre>
+    chown mysql:mysql -R /var/lib/mysql
+</pre></code>
+
+初始化 MySQL
+<code><pre>
+    mysqld --initialize
+</pre></code>
+
+启动 MySQL
+<code><pre>
+    systemctl start mysqld
+</pre></code>
+
+查看 MySQL 运行状态
+<code><pre>
+    systemctl status mysqld
+</pre></code>
+
 <br><br>
 
 ### 问题解决办法收集
