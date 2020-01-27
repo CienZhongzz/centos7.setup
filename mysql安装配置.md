@@ -104,3 +104,28 @@ yum install mysql-server
 <code><pre>
     service mysqld restart
 </pre></code>
+
+
+### 允许Mysql数据库远程访问的有效方法
+
+- 进入mysql
+<code><pre>
+mysql -h localhost -u root -p
+</pre></code>
+
+- 打开某个数据库访问权限:
+<code><pre>
+mysql> GRANT ALL ON database_name.* TO user_name@'ip_address' IDENTIFIED BY 'user_password' WITH GRANT OPTION;
+</pre></code>
+
+> ip_address=% 代表对所有客户端开放
+
+- 打开全部数据库访问权限:
+<code><pre>
+mysql> GRANT ALL ON *.* TO user_name@'ip_address' IDENTIFIED BY 'user_password' WITH GRANT OPTION;
+</pre></code>
+
+- 生效命令
+<code><pre>
+flush privileges;
+</pre></code>
