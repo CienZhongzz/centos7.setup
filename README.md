@@ -6,7 +6,7 @@
 
 - 查看日志常用命令
 <code><pre>
-# 显示filename最后20行
+//显示filename最后20行
 tail -n 20 filename
 </pre></code>
 
