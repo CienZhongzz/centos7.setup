@@ -15,3 +15,6 @@ tail -n 20 filename
 > 输入：scp /home/helpteach/project/mallupload/1509681299449.png wasadmin@10.127.40.25:/home/test
 > wasadmin@10.127.40.25:/home/test 为远程服务器的账号、IP、目录
 
+
+- 查看当前文件大小
+> du -sh *
