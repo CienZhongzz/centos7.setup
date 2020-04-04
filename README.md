@@ -18,3 +18,20 @@ tail -n 20 filename
 
 - 查看当前文件大小
 > du -sh *
+
+
+### 创建用户并授权指定目录
+
+- 在root下执行
+> groupadd  admin   // 创建一个组admin
+
+- 创建用户
+> useradd -m -g admin wu    // 在用户组admin下新增用户wu
+
+- 设置用户密码
+> passwd  wu     // 给用户wu设置密码，按回车输密码
+
+
+- 切换到home目录，在root用户下给uiadm授权
+> chmod 775 -R wu
+
