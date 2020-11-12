@@ -1,13 +1,13 @@
 # kratos项目安装
 
 ### 1.安装protoc二进制文件（这一步比较重要）
-(```)
+```
 	// 下载地址：https://github.com/protocolbuffers/protobuf/releases/tag/v3.7.1
 	//（或者https://github.com/google/protobuf/releases）
 	// 选择文件：protoc-3.7.1-linux-x86_64.zip
 	mv bin/protoc /usr/local/bin/
 	mv include/google /usr/local/include/
-(```)
+```
 
 
 ### 2.安装protobuf库文件
