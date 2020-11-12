@@ -12,7 +12,7 @@ tar -C /usr/local -xzf go1.13.linux-amd64.tar.gz
 ### 2.配置环境变量（.bash_profile）
 <code><pre>
 	vi ~/.bash_profile
-	
+
 	// 插入以下内容
 	export GOROOT=/usr/local/go
 	export PATH=$PATH:$GOROOT/bin
@@ -31,6 +31,6 @@ tar -C /usr/local -xzf go1.13.linux-amd64.tar.gz
 ### 3.验证是否配置成功
 <code><pre>
 	go version
-	# go version go1.15.4 linux/amd64
+	// go version go1.15.4 linux/amd64
 </pre></code>
 
