@@ -51,7 +51,7 @@ go get google.golang.org/genproto/...
 ```
 go get -u github.com/go-kratos/kratos/tool/kratos
 cd $GOPATH/src
-kratos new kratos-demo ~~--proto~~
+kratos new kratos-demo --proto
 ```
 
 
@@ -63,5 +63,6 @@ go build
 ```
 
 
-> 打开浏览器访问：http://localhost:8000/kratos-demo/start，你会看到输出了Golang 大法好 ！！！
+> 打开浏览器访问：http://localhost:8000/kratos-demo/start
+> 你会看到输出了Golang 大法好 ！！！
 
