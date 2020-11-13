@@ -1,22 +1,18 @@
 # mysql安装配置
 
-- 安装
+### 1.安装
 
-参考地址：
-
-https://www.runoob.com/mysql/mysql-install.html
+- 参考地址：https://www.runoob.com/mysql/mysql-install.html
 
 
-独立下载mysql仓库
-
-<code><pre>
+- 独立下载mysql仓库
+```
 wget -i -c http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm
-
 yum -y install mysql57-community-release-el7-10.noarch.rpm
-</pre></code>
+```
 
 
-- 报错
+- 安装过程报错
 
 No package matched to upgrade: mysql57-community-release
 --> Finished Dependency Resolution
@@ -25,51 +21,54 @@ You could try using --skip-broken to work around the problem
 You could try running: rpm -Va --nofiles --nodigest
 
 
-rpm -qa |grep mysql 查看有如下内容
+*查看有如下内容*
+```
+// 输入命令
+rpm -qa |grep mysql
 
-> mysql-community-release-el6-5.noarch
-> mysql-community-common-5.6.44-2.el6.x86_64
+mysql-community-release-el6-5.noarch
+mysql-community-common-5.6.44-2.el6.x86_64
+```
 
-操作一下 卸载了
+*操作一下 卸载了*
+```
+// 输入命令
+rpm -e --nodeps mysql-community-release-el6-5.noarch
+rpm -e --nodeps mysql-community-common-5.6.44-2.el6.x86_64
+```
 
-> rpm -e --nodeps mysql-community-release-el6-5.noarch
-> rpm -e --nodeps mysql-community-common-5.6.44-2.el6.x86_64
+*重新升级*
+```
+// 输入命令
+rpm -Uvh mysql57-community-release-el7-10.noarch.rpm
+```
 
-重新升级
-
-> rpm -Uvh mysql57-community-release-el7-10.noarch.rpm
-
-
-下一步，继续安装
-<code><pre>
+*下一步，继续安装*
+```
 yum update
-
 yum install mysql-server
-</pre></code>
+```
 
-设置权限
-<code><pre>
-    chown mysql:mysql -R /var/lib/mysql
-</pre></code>
+*设置权限*
+```
+chown mysql:mysql -R /var/lib/mysql
+```
 
-初始化 MySQL
-<code><pre>
-    mysqld --initialize
-</pre></code>
+### 2.日常配置维护
+```
+// 初始化 MySQL
+mysqld --initialize
 
-启动 MySQL
-<code><pre>
-    systemctl start mysqld
-</pre></code>
+// 启动 MySQL
+systemctl start mysqld
 
-查看 MySQL 运行状态
-<code><pre>
-    systemctl status mysqld
-</pre></code>
+// 查看 MySQL 运行状态
+systemctl status mysqld
+```
 
-<br><br>
+<br>
 
-### 问题解决办法收集
+### 3.问题解决办法收集
 
 > 内存不足导致mysql经常自动停止服务
 
@@ -77,55 +76,49 @@ yum install mysql-server
 
 - a.逐条运行下面的命令
 
-<code><pre>
-    sudo /bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=1024
-    sudo /sbin/mkswap /var/swap.1
-    sudo /sbin/swapon /var/swap.1
-</pre></code>
+```
+sudo /bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=1024
+sudo /sbin/mkswap /var/swap.1
+sudo /sbin/swapon /var/swap.1
+```
 
 - b.将下面一行添加到 /etc/fstab,服务器重启时自动启动swap
 
-<code><pre>
-    /var/swap.1 swap swap defaults 0 0
-</pre></code>
+```
+/var/swap.1 swap swap defaults 0 0
+```
 
 - c.降低数据库 InnoDB 引擎的缓冲区大小，以及限制 MySQL 的最大连接数(max_connections)
-<code><pre>
-    在/etc/mysql/my.cnf 的 mysqld 下添加或修改下面两句：
+```
+在/etc/mysql/my.cnf 的 mysqld 下添加或修改下面两句：
 
-    降低 InnoDB 缓冲区大小为 64M 或者 32M
-    innodb_buffer_pool_size = 64M
-    
-    限制最大连接数为100，在服务器配置很低时可以继续降低
-    max_connections = 100
-</pre></code>
+降低 InnoDB 缓冲区大小为 64M 或者 32M
+innodb_buffer_pool_size = 64M
+
+限制最大连接数为100，在服务器配置很低时可以继续降低
+max_connections = 100
+```
 
 - d.修改完重启 MySQL
-<code><pre>
-    service mysqld restart
-</pre></code>
+```
+service mysqld restart
+```
 
 
-### 允许Mysql数据库远程访问的有效方法
+### 4.允许Mysql数据库远程访问的有效方法
 
-- 进入mysql
-<code><pre>
+```
+// 进入mysql
 mysql -h localhost -u root -p
-</pre></code>
 
-- 打开某个数据库访问权限:
-<code><pre>
+// 开某个数据库访问权限:
 mysql> GRANT ALL ON database_name.* TO user_name@'ip_address' IDENTIFIED BY 'user_password' WITH GRANT OPTION;
-</pre></code>
 
-> ip_address=% 代表对所有客户端开放
+ip_address=% 代表对所有客户端开放
 
-- 打开全部数据库访问权限:
-<code><pre>
+// 打开全部数据库访问权限:
 mysql> GRANT ALL ON *.* TO user_name@'ip_address' IDENTIFIED BY 'user_password' WITH GRANT OPTION;
-</pre></code>
 
-- 生效命令
-<code><pre>
+// 生效命令
 flush privileges;
-</pre></code>
+```
