@@ -39,10 +39,11 @@ tail -n 20 filename
 ```
 curl -H "Content-Type: application/json" -X POST -d '{"user_id": "123", "coin":100, "success":1, "msg":"OK!" }' "http://192.168.0.1:8001/test"
 ```
-参数|内容
--H|请求头
--d|POST内容
--X|请求协议
--A|代理
--b|Cookie
+| 参数 | 内容 | 参考 |
+| ---- | ---- | ---- |
+| -H | 请求头 | Content-Type: application/json |
+| -d | POST内容 | {"user_id": "123", "coin":100} |
+| -X | 请求协议 | POST |
+| -A | 代理 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36 |
+| -b | Cookie | foo=bar&user=admin |
 
