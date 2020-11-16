@@ -3,12 +3,6 @@
 
 ### 1.准备安装环境
 ```
-yum install openssl-devel -y
-
-yum install libffi-devel -y
-
-yum install -y unzip zip
-
 yum install openssl-devel libffi-devel unzip zip -y
 
 yum install gcc -y
