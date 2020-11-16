@@ -35,3 +35,14 @@ tail -n 20 filename
 - 切换到home目录，在root用户下给uiadm授权
 > chmod 775 -R wu
 
+### CURL 发送POST请求
+```
+curl -H "Content-Type: application/json" -X POST -d '{"user_id": "123", "coin":100, "success":1, "msg":"OK!" }' "http://192.168.0.1:8001/test"
+```
+参数|内容
+-H|请求头
+-d|POST内容
+-X|请求协议
+-A|代理
+-b|Cookie
+
