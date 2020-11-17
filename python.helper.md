@@ -75,3 +75,15 @@ pip3 install asyncio aiohttp pymysql DBUtils yaml-config redis logging3
 (pip3 install --upgrade 库名)
 
 ```
+
+### 8.卸载python
+```
+// 卸载python3
+rpm -qa|grep python3|xargs rpm -ev --allmatches --nodeps
+
+// 删除所有残余文件
+whereis python3 |xargs rm -frv
+
+// 查看现有安装的python
+whereis python
+```
