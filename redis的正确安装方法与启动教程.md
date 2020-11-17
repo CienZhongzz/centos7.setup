@@ -1,8 +1,9 @@
 # 在Linux上安装配置redis
 
 ### 1. 下载最新稳定版本到默认目录，笔者这里下载的是5.0.5版本
-    *官网下载地址：http://redis.io/download*
 ```
+// 官网下载地址：http://redis.io/download
+
 wget http://download.redis.io/releases/redis-5.0.5.tar.gz
 ```
 
