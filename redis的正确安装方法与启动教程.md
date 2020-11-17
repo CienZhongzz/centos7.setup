@@ -39,8 +39,8 @@ mv /usr/local/redis/bin/redis-cli /usr/local/bin/
 
 ### 7. 查看redis版本
 ```
-    redis-cli -v
-    // 显示redis-cli 5.0.5表示安装成功
+redis-cli -v
+// 显示redis-cli 5.0.5表示安装成功
 ```
 
 ### 8. 在redis安装位置创建一个存放配置文件的目录
