@@ -11,7 +11,9 @@
 
 - 3.使用mount 命令进行挂载
 <code><pre>
-    mount -t cifs -o username=Administrator,password=cienwins  //10.124.120.60/code1 /test1
+    mount -t cifs -o username=Administrator,password=cienwins  //10.124.120.60/code1 /dev
+    // 若挂载失败提示：主机关闭，是因为协议不匹配问题，加个版本号解决：
+    mount -t cifs -o username=Administrator,password=cienwins,vers=2.0 //10.124.120.60/code1 /home/dev
 </pre></code>
 
 - 4.查看挂载结果，命令：
