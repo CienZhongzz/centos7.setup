@@ -36,3 +36,7 @@ go version
 // go version go1.15.4 linux/amd64
 ```
 
+```
+// nohup运行
+nohup ./aiexton_shell --port=10011 --log_dir=./log --dailyRolling=true
+```

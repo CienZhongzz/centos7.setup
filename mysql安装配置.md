@@ -121,4 +121,12 @@ mysql> GRANT ALL ON *.* TO user_name@'ip_address' IDENTIFIED BY 'user_password' 
 
 // 生效命令
 flush privileges;
+
+
+// 8.0+版本修改密码
+alter user 'root'@'localhost' identified by 'admin123';
+// 新增用户
+create user 'kuser1'@'%' identified by 'bppp232';
+flush privileges;
+
 ```
